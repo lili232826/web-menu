@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>金泰美食汇</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="css/menu.css">
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<style>
+			
+		</style>
+</head>
+<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#fff"></a>
+			<h1 class="mui-title">每日菜单</h1>
+		</header>
+		<div class="mui-content mui-row mui-fullscreen ">
+			<div class="mui-col-xs-3" style="background:#efedee">
+				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+					<!-- <a class="mui-control-item mui-active" href="#item1">套餐</a>
+					<a class="mui-control-item" href="#item2">小碗蒸菜</a>
+					<a class="mui-control-item" href="#item3">饺子</a>
+					<a class="mui-control-item" href="#item4">面条</a>
+					<a class="mui-control-item" href="#item5">过桥米线</a>
+					<a class="mui-control-item" href="#item6">奶茶</a>
+					<a class="mui-control-item" href="#item7">营养早餐</a> -->
+				</div>
+			</div>
+			<div id="segmentedControlContents" class="mui-col-xs-9" >
+				<!-- <div class="mui-loading" style="margin-top:26vh">
+					<div class="mui-spinner">
+					</div>
+				</div> -->
+			</div>
+		</div>
+		
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+		
+			var controls = document.getElementById("segmentedControls");
+			var contents = document.getElementById("segmentedControlContents");
+			var data=null;
+			getMenuDate().then(function(data){
+				data=data.data,len=data.length;
+				var html = [];var content=[];
+				for (var i=0; i < len; i++) {
+					html.push('<a class="mui-control-item" data-index="'+i+'" href="#item' + i + '">' + data[i]['name'] + '</a>');
+					content.push(`<div id="item`+i+`" class="mui-control-content"><ul class="mui-table-view">`);
+					var list=data[i]["menu"],listLen=list.length;
+					for(var j=0;j<listLen;j++){
+						content.push(`<li class="mui-table-view-cell">`
+										+`<a href="javascript:;">`
+											+`<img class="mui-media-object mui-pull-left" src="`+list[j]["pic"]+`">`
+											+`<div class="mui-media-body">`
+												+list[j]["name"]
+												+`<p class='mui-ellipsis'>￥<span>`+list[j]["price"]+`</span></p>`
+											+`</div>`
+										+`</a>`
+									+`</li>`);
+					}				
+					content.push(`</ul></div>`);
+									
+				};
+				controls.innerHTML = html.join('');
+				contents.innerHTML = content.join('');
+				controls.querySelector('.mui-control-item').classList.add('mui-active');
+				contents.querySelector('.mui-control-content').classList.add('mui-active');
+			});	
+			
+			
+					
+			function getMenuDate(){
+				var def = $.Deferred();
+				mui.getJSON('data/menu_list.json',function(data){
+					def.resolve(data);	
+				});
+				return def;
+			}
+			getMenuDate();
+			
+		</script>
+
+	</body>
+</html>

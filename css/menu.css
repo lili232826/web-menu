@@ -1,0 +1,114 @@
+.color-tip{
+	color:#ff6600;
+}
+.mui-row.mui-fullscreen>[class*="mui-col-"] {
+	height: 100%;
+}
+.mui-col-xs-3,
+.mui-control-content {
+	overflow-y: auto;
+	height: 100%;
+}
+.mui-segmented-control .mui-control-item {
+	line-height: 50px;
+	width: 100%;
+	border: none;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	background-color: #fff;
+	border: none;
+	color: #ff450e;
+}
+.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item,
+.mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item.mui-active{
+	border:none;
+	
+}
+.mui-table-view:after{
+	height: 0;
+}
+.mui-title{
+	color: #fff;
+}
+.mui-control-content{
+	background-color:#fff;
+	/* padding:14px; */
+}
+.logo-pic{
+				width:100%;
+			}
+.active-tip{
+				text-align: center;
+			}
+.mui-bar-nav{
+	position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    height: 44px;
+    padding-right: 10px;
+    padding-left: 10px;
+	background:#fe8800; /* 涓�浜涗笉鏀寔鑳屾櫙娓愬彉鐨勬祻瑙堝櫒 */  
+	background:-webkit-gradient(linear, 0 50%, 100% 50%, from(#fe8800), to(#ff6600));
+    background:-moz-linear-gradient(left, #fe8800,#ff6600);  
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#fe8800,endColorstr=#ff6600,grandientType=1);   
+}	
+#segmentedControlContents .mui-table-view{
+	padding-top: 10px;
+}
+.mui-table-view .mui-media-body{
+	padding: 14px 0;
+	font-size:16px;
+}
+#segmentedControlContents .mui-table-view-cell p{
+	margin-top: 20px;
+	color: #ff460e;
+	font-size: 12px;
+}
+.mui-table-view-cell p>span{
+	font-size:16px
+}
+.mui-table-view-cell p>span:nth-child(2){
+	margin-left:10px;
+}
+/* list */
+.list_bg{
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	padding-top:44px;
+	background: url(/images/sProduct_bj.jpg) no-repeat center;
+	background-size: cover;
+	box-sizing: border-box;
+	overflow:hidden;
+}
+.ph_input::-webkit-input-placeholder{
+    color:#a7a7a7;
+}
+.search_input:-moz-placeholder{
+    color:#a7a7a7;
+}
+.search_input::-moz-placeholder{
+    color:#a7a7a7;
+}
+.search_input:-ms-input-placeholder{
+    color:#a7a7a7;
+}
+#segmentedControlContents .mui-table-view-cell:after{
+	height: 0;
+}
+#segmentedControlContents .mui-table-view .mui-media-object{
+	width: 84px;
+	height: 84px;
+	max-width: 84px;
+	border-radius: 4px;
+}
+.featured{
+	background-color: transparent;
+	background-image: none;
+}
+    
+   

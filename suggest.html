@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="css/menu.css">
+	<!-- 引用控制层插件样式 -->
+<link rel="stylesheet" href="plugin/upload/css/zyUpload.css" type="text/css">
+
+
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<style>			
+		.upload_drag_area{
+			display:none;
+			
+		}
+		.upload_main,.upload_preview{
+			border:none;
+		}
+		.convent_choice{
+			float: none;
+			height:84px;
+		}
+		 .filePicker{
+			min-width:0;
+			height: 79px;
+			width: 100%;
+			vertical-align: bottom;
+			font-size: 14px;
+			background: transparent !important;
+		} 
+		.andArea{
+		padding-top:4px;
+		}
+		.andArea:hover{
+		cursor: pointer;
+		}
+		.upload_preview{
+			width: 100%;
+		}
+		.webuploader_pick{
+			display: none;
+		}
+		.upload_btn{
+			 display:none 
+		}
+	</style>
+</head>
+<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#fff"></a>
+			<h1 class="mui-title">意见反馈</h1>
+		</header>
+		<div class="mui-content mui-row mui-fullscreen">
+			<div style="width:90%;margin:0 auto;">
+				<div style="margin:12px 0;color: #ff460e;">建议采纳，送君精美礼品呦！！！</div>
+				<form class="" id="suggest_form">
+					<!-- <div class="mui-input-row" style="border-radius: 3px;border:1px solid rgba(0,0,0,.2);background-color: #fff;margin-bottom:16px;">
+						<label style="color:#a7a7a7">你的主题:</label>
+						<input type="text" class="mui-input" placeholder="">
+					</div> -->
+					<div class="mui-input-row" >
+						<textarea class="ph_input" id="textarea" rows="5" placeholder="您宝贵的意见,就是我们进步的源泉!" style=""></textarea>
+					</div>
+					<div class="mui-input-row" style="margin-bottom:15px;color:#a7a7a7">
+						(*^_^*)请详细描述您遇到的问题，有助于我们快速定位并解决问题，或留下您的宝贵意见或建议，我们会认真进行评估！
+					</div>
+					<div id="upPic">
+						
+					</div>
+					<button type="button" class="mui-btn  mui-btn-danger mui-btn-block" style="line-height:1;background-color: #ff460e;" onclick=submitFn()>提交</button>
+					
+				</form>
+				
+			</div>
+			
+			
+		</div>
+		<!-- 引用核心层插件 -->
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<!-- <script >jQuery.noConflict()</script> -->
+		<script src="plugin/upload/js/zyFile.js"></script>
+		<!-- 引用控制层插件 -->
+		<script src="plugin/upload/js/zyUpload.js"></script>
+		<!-- 引用初始化JS -->
+		<script src="plugin/upload/js/jq22.js"></script>
+		
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+		});
+		var filesArr=[];
+		//console.log($('#suggest_from').length,'lllllll')
+		function submitFn(){
+			var check=true;
+			mui("#suggest_form textarea").each(function() {
+			//若当前input为空，则alert提醒 
+			if(!this.value || this.value.trim() == "") {
+				//var label = this.previousElementSibling;
+				mui.alert("不允许为空");
+				check = false;
+				return false;
+			}
+			}); //校验通过，继续执行业务逻辑 
+			if(check){
+				console.log(filesArr,'888888888888888')
+				mui.alert('验证通过!')
+			}
+		}
+		</script>
+
+	</body>
+</html>

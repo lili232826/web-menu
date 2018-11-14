@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+	<head>
+		<meta charset="utf-8">
+		<title>会员注册</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/icons-extra.css" />
+		<link rel="stylesheet" href="css/menu.css">
+		<!--App自定义的css-->
+		<!-- <link rel="stylesheet" type="text/css" href="css/icons-extra.css" /> -->
+		<style>
+		.mui-content{
+			padding-top:0px !important;
+		}
+			.ui-page-login{
+				width: 100%;
+				height: 100%;
+				margin: 0px;
+				padding: 0px;
+				
+			}
+			h5 {
+				margin: 5px 7px;
+			}
+			.code-btn{
+				position: absolute;
+				right:0px;
+				top:0px;
+				height: 40px;
+				width:auto !important;
+				line-height:40px;
+				color:#ec8004;
+				font-size:16px;
+				border-radius: 0;
+				padding-left:6px;
+				padding-right:6px;
+				border-left:1px solid #E5E5E5;
+				background: -webkit-linear-gradient(#fe88003b,#fe8800b3, #fe8800); /* Safari 5.1 - 6.0 */
+			    background: -o-linear-gradient(#fe88003b,#fe8800b3,#fe8800); /* Opera 11.1 - 12.0 */
+			    background: -moz-linear-gradient(#fe88003b,#fe8800b3, #fe8800); /* Firefox 3.6 - 15 */
+			    background: linear-gradient(#fe88003b,#fe8800b3, #fe8800); /* 标准的语法 */
+				
+			}				
+			.active-tip p{
+				background-color:#ff6600;
+				color: #fff;
+				padding: 0 2px;
+				display: inline-block;
+			}
+			.active-tip .mui-icon{
+				font-size: 16px;
+				font-weight: 600;
+			}
+			
+			.mui-input-row label{
+				padding: 11px 0px 11px 15px;
+				font-size: 16px;
+			}
+			.mui-input-row label~input[type="text"]{
+				font-size: 16px;
+			}
+			.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{
+				color: #ff6600;
+			}
+			.mui-input-group:before,
+			.mui-input-group:after,
+			.mui-input-group .mui-input-row:after{
+				background: transparent;
+			}
+			.radius-wrap .mui-input-group{
+				background-color: transparent !important;
+			}
+			.radius-wrap .mui-input-row{
+				background: rgba(255,255,255,0.8);
+				background: rgba(255,255,255,0.8);
+				margin-bottom:10px;
+			}
+			
+			.radius-wrap{
+				padding: 0 10px;
+			}
+		</style>
+	
+	</head>
+
+	<body class="ui-page-login">
+		<!-- <header class="mui-bar mui-bar-nav">
+			 <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#fff"></a> 
+			<h1 class="mui-title">手机注册</h1>
+		</header> -->
+		<div class="mui-content mui-fullscreen" style="height:100%;background:url(images/sProduct_bj.jpg) center no-repeat ;background-size:cover;">
+			<div class="mui-content-padded" style="margin: 5px;">
+				
+				<div class="register-top">
+					<a href="javascript:;">
+						<div style="width:40%;margin:40px auto 20px;text-align: center;width:40%;">
+							<img class="logo-pic" src="images/logo_red.png" alt="美食城logo">
+						</div>
+					</a>	
+				</div>
+				<form action="#" id="registForm">
+					
+					<div class="radius-wrap">
+						<div class="active-tip" style="margin-bottom: 10px;">
+							<div style="margin-bottom: 20px;">感谢您对金泰美食汇的关注</div>
+						</div>
+						<div class="mui-input-group">
+							<!-- <div class="mui-input-row">
+								<label class="icon_login"><img alt="" src="images/user_icon.png"></label>
+								<input type="text" name="user" class="mui-input-clear" placeholder="请输入昵称">
+							</div> -->
+							<div class="mui-input-row">
+								<label class="icon_login" >手机号:</label>
+								<input type="text" name="phone" class="mui-input-clear" placeholder="请输入手机号" autocomplete="off">
+							</div>
+							<div class="mui-input-row">
+								<label class="icon_login">短信验证码:</label>
+								<input type="text" name="code" class="mui-input-clear" placeholder="请输入验证码" autocomplete="off">
+								<span class=" code-btn" style="">获取验证码</span> 
+							</div>
+							<div class=" mui-checkbox mui-left">
+								<label style="font-size:12px ;line-height:40px">同意接收金泰美食汇产品及活动信息。</label>
+								<input name="checkbox" value="Item 1" type="checkbox" >
+							</div>
+						</div>
+					
+					</div>
+					
+					<div class="mui-button-row">
+						<button class="mui-btn  mui-btn-danger mui-btn-block" onclick="registFn()" style="line-height: 1;background-color: #ff460e;margin:20px 0">注册会员</button>
+					</div>
+					<div class="active-tip" style="margin-bottom: 10px;">
+						<div><p><span class="mui-icon mui-icon-star"></span>注册成功,9折卡赠送</p></div>
+						<div><p><span class="mui-icon mui-icon-star"></span>活动期间，注册会员赠送奶茶</p></div>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+		<script src="/js/mui.min.js"></script>
+		<script src="/js/jquery-2.1.1.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			
+			var numDown=60;
+			var timer=null;
+			mui('#registForm').on("tap",'.code-btn',function(){
+				var phone=$("input[name='phone']").val().trim();
+				var codeBtn=$(this);
+				console.log('666666');
+				if(phone==''){
+					mui.alert("请输入手机号");
+					return false;
+				}else if(!(/^1[34578]\d{9}$/.test(phone))){
+					mui.alert("手机号格式不正确");
+					return false;
+				};
+				clearInterval(timer)
+				timer=setInterval(function(){
+					if(numDown<1){
+						$(codeBtn).text("重新获取");
+						numDown=60;clearInterval(timer)
+						$(codeBtn).attr("disabled",false)
+						return false;
+					}
+					$(codeBtn).text("已发送("+numDown+")");
+					$(codeBtn).attr("disabled",true)
+					numDown--;
+				},1000)
+				
+			})
+			function registFn(){
+				var user=$("input[name='user']").val().trim();
+				var phone=$("input[name='phone']").val().trim();
+				var code=$("input[name='code']").val().trim();
+				if(user==''){
+					mui.alert("请输入姓名");
+					return false;
+				}else if(phone==''){
+					mui.alert("请输入手机号");
+					return false;
+				}else if(!(/^1[34578]\d{9}$/.test(phone))){
+					mui.alert("手机号格式不正确");
+					return false;
+				}else if(code==''){
+					mui.alert("请输入验证码");
+				}
+				return false;
+			}
+		</script>
+	</body>
+
+</html>
